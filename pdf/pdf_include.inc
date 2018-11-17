@@ -1,0 +1,10 @@
+<?php
+require('../pdf/fpdf.php');
+require('../pdf/StudentRecordPDF.php');
+require('../pdf/ClassRecordPDF.php');
+require('../pdf/ClassPSATRecordPDF.php');
+require('../pdf/StudentReportPDF.php');
+require('../pdf/StudentTuitionPDF.php');
+require('../pdf/CreateReport.php');
+require('../pdf/ReportPDF.php');
+?>

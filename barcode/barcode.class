@@ -1,0 +1,152 @@
+<?php
+class BarcodeI25
+{    
+	var $barwidth 		= 1;   
+	var $fatbarwidth 	= 3;  
+	var $barheight 		= 50; 
+  var $ipp          = "ponto_preto.gif";
+  var $ipb          = "ponto_branco.gif";
+	var $errors 			= '';
+	
+  var $mixed_code 	= "";
+  var $bc 					= array();
+  var $bc_string 		= "";
+ 	var $barcode;    
+  var $totalwidth 	= 0;
+  var $nb_code 	= 0;
+   
+  function BarcodeI25($code='')
+  {
+    if ( $code !== '' )
+    {
+        $this->SetCode($code);
+    }
+  }
+    
+  function SetCode($code)
+  {   
+ 		global $MIOLO;
+		$code = trim($code);
+       
+    if (strlen($code)==0) { 
+			$this->errors ="Barcode Undefined";
+		}
+    else if ((strlen($code) % 2)!=0) { 
+			$this->errors = "Invalid barcode lenght";
+		}
+   	$this->barcode = $code;
+   	$this->nb_code = strlen($code);
+  }
+  function GetCode()
+  {
+      return $this->barcode;
+  }
+    
+  function getNumber($str)
+  {
+  	for ($i = 0; $i < 10; $i++) {
+  		if ($str == $this->bc[$i])
+  			return $i;
+  	}
+  	return -1;
+  }
+  function getCodeNumber()
+  {
+  	$num = array();
+  	$l = strlen($this->bc[10]);
+  	for ($i = $l; $i < strlen($this->bc_string); $i+=5) {
+  		$num[] = substr($this->bc_string, $i, 5);
+  	}
+  	return $num;
+  }
+
+  function Generate()
+  {   
+		if ($this->errors) {
+			echo ($this->errors);
+		}
+		else
+		{
+			$th = "";
+			$new_string = "";
+			$lbc = 0; $xi = 0; $k = 0;
+			$this->bc_string = $this->barcode;
+	    
+	    $this->BarCodeModel();
+			  
+			$this->bc_string = strtoupper($this->bc_string);
+			  
+			$lbc = strlen($this->bc_string) - 1;
+			for( $xi=0; $xi<= $lbc; $xi++ )
+			{
+				$k = (int) substr($this->bc_string,$xi,1);
+			  $new_string = $new_string . $this->bc[$k];
+			}
+			  
+			$this->bc_string = $new_string;
+			//$this->MixCode();
+			  
+			$this->bc_string = $this->bc[10] . $this->bc_string .$this->bc[11];  //Adding Start and Stop Pattern
+			  
+			$lbc = strlen($this->bc_string) - 1;
+			  
+			$barra_html="";
+			$this->totalwidth = 0;
+			for( $xi=0; $xi<= $lbc; $xi++ )
+			{
+			   $imgBar = "";
+			   $imgWid = 0;
+			   $imgBar = ( $xi % 2 == 0 ) ? $this->ipp : $this->ipb;
+			   $imgWid = ( $this->bc_string[$xi]=="0" ) ? $this->barwidth : $this->fatbarwidth;
+			   $barra_html .= "<img src=\"../barcode/". $imgBar . "\" width=\"". $imgWid . "\" height=20 border=0>";
+			   $this->totalwidth = $this->totalwidth + $imgWid;
+			}
+			$this->totalwidth = (int) ($this->totalwidth * 1.2);
+			
+			echo ("<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 WIDTH=".$this->totalwidth.">");
+			echo("<TR><TD WIDTH=100%><div align=center> " . $barra_html . " </div></TD></TR>");
+			echo("<TR><TD class=codebar><div align=center>"); 
+				$num = $this->getCodeNumber();
+				for ($i = 0; $i < $this->nb_code; $i++) {
+					echo($this->getNumber($num[$i]) . " ");
+				}
+			echo("</div></TD></TR></TABLE>");
+		}
+        
+	}
+    
+  function BarCodeModel()
+  {
+			//define barcode patterns
+			$this->bc[0]  = "00110";         //0 digit
+			$this->bc[1]  = "10001";         //1 digit
+			$this->bc[2]  = "01001";         //2 digit
+			$this->bc[3]  = "11000";         //3 digit
+			$this->bc[4]  = "00101";         //4 digit
+			$this->bc[5]  = "10100";         //5 digit
+			$this->bc[6]  = "01100";         //6 digit
+			$this->bc[7]  = "00011";         //7 digit
+			$this->bc[8]  = "10010";         //8 digit
+			$this->bc[9]  = "01010";         //9 digit
+			$this->bc[10] = "0000";          //pre-amble
+			$this->bc[11] = "100";           //post-amble
+  }
+  function MixCode()
+  {
+    $i = 0; $l = 0; $k = 0;  
+    $s = ""; 
+    $l = strlen( $this->bc_string );
+    $s = "";
+    for ( $i = 0; $i< $l; $i += 10 )
+    {
+      $s = $s . $this->bc_string[$i]   .  $this->bc_string[$i+5];
+      $s = $s . $this->bc_string[$i+1] .  $this->bc_string[$i+6];
+      $s = $s . $this->bc_string[$i+2] .  $this->bc_string[$i+7];
+      $s = $s . $this->bc_string[$i+3] .  $this->bc_string[$i+8];
+      $s = $s . $this->bc_string[$i+4] .  $this->bc_string[$i+9];
+    }
+    $this->bc_string = $s;
+  }
+}
+
+?>

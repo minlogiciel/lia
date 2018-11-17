@@ -1,0 +1,119 @@
+div.date_hour {
+	font-size:100px;
+	color:red;
+	text-align:center;
+	background: #3d3d3d
+}
+
+#formAdmission {
+	border:1px solid blue;
+	width:400px;
+	margin:auto;
+	padding:20px;
+	border-radius:10px;
+	background:white;
+}
+
+#formAdmission input, #formAdmission select {
+	float:left;
+	width:70%;
+	display:inline-block;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin-bottom: 10px;
+}
+#formAdmission label {
+	float:left;
+	width:30%;
+	display:inline-block;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#formAdmission label[type="submit"] {
+	float:none;
+	margin:auto;
+	display:block;
+}
+
+#diaporama {
+	width:800px;
+	height:600px;
+	margin:auto;
+	position:relative;
+} 
+#diaporama img{
+	position:absolute;
+	left:0;
+	top:0;
+}
+#diaporama a {
+	position:absolute;
+	width:50px;
+	height:50px;
+	background:rgb(0,0,0,0.5);
+	color:white;
+	font-size:2em;
+	text-align:center;
+	top:275px;
+}
+#prev{
+	left:0;
+}
+#next {
+	right:0;
+}
+
+
+#formContact textarea {
+
+}
+
+.bordure{
+	border:1px solid green;
+}
+
+@media only screen and (max-width:480px) {
+	body {
+		margin:0;
+	}
+	#formContact label, #formContact input, #formContact select {
+		float:none;
+		display:block;
+		width:100%;
+	}
+}
+#formContact label[type="submit"] {
+	float:non;
+	margin:auto;
+	display:block;
+}
+.survolable {
+	-webkit-box-shadow: 2px 2px 2px 2px rgba(0,0,0,0);
+		box-shadow: 2px 2px 2px 2px rgba(0,0,0,.1);
+}
+.erreur {
+	color:red;
+}
+.bordures {
+	border: 2px solid red;
+}
+.bleu {
+	color:blue;
+}
+.bleu {
+	color:red;
+}
+
+.button {
+	background:#3d3d3d;
+	color:lime;
+	padding:10px;
+	margin:5px;
+	font-family:Arial;
+}
+.button.actif{
+	background:lime;
+	color:#3d3d3d;
+}

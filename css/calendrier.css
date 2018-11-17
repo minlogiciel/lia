@@ -1,0 +1,95 @@
+.mod_monthyearname {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+.mod_dayname {
+	COLOR: black; PADDING-RIGHT: 1px; PADDING-LEFT: 1px; FONT-WEIGHT: bold; FONT-SIZE: 8pt; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; BORDER-BOTTOM: #000 1px solid; FONT-FAMILY: arial,sans-serif; BACKGROUND-COLOR: #fff; TEXT-ALIGN: center
+}
+.mod_daynameWE {
+	COLOR: red; PADDING-RIGHT: 1px; PADDING-LEFT: 1px; FONT-WEIGHT: bold; FONT-SIZE: 8pt; PADDING-BOTTOM: 1px; PADDING-TOP: 1px; BORDER-BOTTOM: #000 1px solid; FONT-FAMILY: arial,sans-serif; BACKGROUND-COLOR: #fff; TEXT-ALIGN: center
+}
+.calendrier-fleche {
+	PADDING-RIGHT: 8px; PADDING-LEFT: 8px; WIDTH: 11px; TEXT-ALIGN: center; BACKGROUND-COLOR: #5ea7d9
+}
+.mod_title {
+	TEXT-ALIGN: center; FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: black; FONT-STYLE: normal; FONT-FAMILY: Arial; BACKGROUND-COLOR: #5ea7d9
+}
+.mod_table {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-BOTTOM: #000000 1px solid; TEXT-ALIGN: center
+}
+.mod_dayoutofmonth {
+	TEXT-ALIGN: center; FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: gray; FONT-FAMILY: Arial; BACKGROUND-COLOR:#CCCCCC; TEXT-DECORATION: none
+}
+.mod_today {
+	TEXT-ALIGN: center; FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: red; FONT-FAMILY: Arial;  TEXT-DECORATION: underline
+}
+.mod_weekend1 {
+	TEXT-ALIGN: center; FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR:black; FFONT-FAMILY: Arial; BACKGROUND-COLOR:#F0CFA2; TEXT-DECORATION: none
+}
+.mod_weekend2 {
+	TEXT-ALIGN: center; FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR:black; FONT-FAMILY: Arial; BACKGROUND-COLOR:#FBC7C6; TEXT-DECORATION: none
+}
+.mod_holiday {
+	TEXT-ALIGN: center; FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: black; FONT-FAMILY: Arial; BACKGROUND-COLOR:#EEBB00; TEXT-DECORATION: none
+}
+.mod_weekday {
+	WIDTH: 20px; TEXT-ALIGN: center; FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: black;  FONT-FAMILY: Arial; TEXT-DECORATION: none
+}
+
+A.mod_daylink:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR:#CC0000; FONT-FAMILY: Arial; TEXT-DECORATION: underline
+}
+A.mod_daylink:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #CC0000; FONT-FAMILY: Arial; TEXT-DECORATION: underline
+}
+A.mod_daylink:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #CC0000; FONT-FAMILY: Arial; TEXT-DECORATION: underline
+}
+A.mod_holidaylink:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: Arial; TEXT-DECORATION: underline
+}
+A.mod_holidaylink:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: Arial; TEXT-DECORATION: underline
+}
+A.mod_holidaylink:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: Arial; TEXT-DECORATION: underline
+}
+
+A.mod_unlink:link {
+	FONT-SIZE: 12px; COLOR: #666666; FONT-FAMILY: Arial
+}
+A.mod_unlink:visited {
+	FONT-SIZE: 12px; COLOR: #666666; FONT-FAMILY: Arial
+}
+A.mod_unlink:hover {
+	FONT-SIZE: 12px; COLOR: #666666; FONT-FAMILY: Arial
+}
+
+A.mod_outlink:link {
+	FONT-SIZE: 12px; COLOR: #999999; FONT-FAMILY: Arial
+}
+A.mod_outlink:visited {
+	FONT-SIZE: 12px; COLOR: #999999; FONT-FAMILY: Arial
+}
+A.mod_outlink:hover {
+	FONT-SIZE: 12px; COLOR: #999999; FONT-FAMILY: Arial
+}
+
+A.mod_link:link {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: Arial
+}
+A.mod_link:visited {
+	FONT-SIZE: 12px; COLOR: black; FONT-FAMILY: Arial
+}
+A.mod_link:hover {
+	FONT-SIZE: 12px; COLOR: silver; FONT-FAMILY: Arial
+}
+#tooltip {
+   	position:absolute;
+   	visibility:hidden;
+   	background-color:#FFEEC7; 
+   	z-index:100;
+   	border:1px solid green; 
+	padding:4px; 
+	font-size:11px;
+	WIDTH: 100px;
+}
